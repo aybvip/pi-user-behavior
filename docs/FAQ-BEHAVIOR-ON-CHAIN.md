@@ -3,18 +3,19 @@
 > **Objection / question:** *"People keep talking about user behavior in Pi. Can you measure it?
 > Can you tell a contributor from a speculator from the chain?"*
 >
-> **Short answer:** **Partly.** Behavior splits into six layers. Three of them (ledger operations,
-> contract events, account/ledger state) are **on-chain and measurable by anyone**. The other three
-> (app engagement, network-level Sybil heuristics, and economic *labels* like
-> contributor-vs-speculator) are **not on-chain** — they live inside applications or inside Pi's
-> internal systems, and are **never** carried by a coin.
+> **Short answer:** **Partly.** Behavior splits into seven layers (B1–B7). Three of them (ledger
+> operations, contract events, account/ledger state) are **on-chain and measurable by anyone**. The
+> other four (app engagement, network-level Sybil heuristics, economic *labels* like
+> contributor-vs-speculator, and off-chain identity/enforcement) are **not on-chain** — they live
+> inside applications, inside Pi's internal systems, or in identity/policy processes, and are
+> **never** carried by a coin.
 
 This is the honest boundary. Saying "behavior is on-chain" without splitting the layers is what
 creates confusion.
 
 ---
 
-## The six layers
+## The seven layers
 
 | # | Layer | Example | On-chain? | How you verify it |
 |---|---|---|---|---|
@@ -24,6 +25,7 @@ creates confusion.
 | **B4** | App engagement | Launchpad `Engagement Score`, clickstream | ❌ **No** | Only the app owner can see it |
 | **B5** | Network-level heuristics | Sybil detection, device fingerprint, referral graph | ❌ **No** | Internal; not public |
 | **B6** | Economic intent / label | "contributor", "speculator", "diamond hand" | ❌ **No** | A category *someone applies*, not a field |
+| **B7** | Identity & enforcement | one-account-per-person, KYC, Security Circles, PiVerify | ❌ **No** | Account/identity level; official FAQ, not the ledger |
 
 Run `node behavior.mjs --claims` to print this table with sources.
 
@@ -88,7 +90,19 @@ interpretations are not measurements.
 
 ---
 
-## 5. The key consequence for coins
+## 5. What is **enforcement, not a ledger field** (B7)
+
+Identity and enforcement — the **one-account-per-person** rule, **KYC**, **Security Circles**, and
+**PiVerify** — are official and real, but they act on **accounts and people**, not on the ledger.
+Pi's own FAQ states the rule and the "multi-pronged" method, and Pi2Day 2026 shipped **PiVerify**
+(including "duplicate detection"). None of it is a field on an account or on a coin — and Pi says the
+checks are *"usually invisible."*
+
+Full detail: [`FAQ-BEYOND-RPC.md`](FAQ-BEYOND-RPC.md).
+
+---
+
+## 6. The key consequence for coins
 
 > **Behavior belongs to an account (or an app), never to a coin.**
 
@@ -102,13 +116,14 @@ follow.**
 
 ---
 
-## 6. Takeaways
+## 7. Takeaways
 
 1. **Behavior is measurable only where it is recorded** — B1–B3.
 2. **App engagement (B4) is real but app-side** — documented in PiRC1, not reproducible from the chain.
 3. **Sybil heuristics (B5) are external and internal** — flag as unofficial.
 4. **"Contributor vs speculator" (B6) is a label**, not a measurement.
-5. **No behavior layer attaches to a coin.** It attaches to accounts.
+5. **Identity & enforcement (B7) is account-level policy** — official and real, but not a ledger field.
+6. **No behavior layer attaches to a coin.** It attaches to accounts.
 
 ---
 

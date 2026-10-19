@@ -105,6 +105,22 @@ ok(byId.D9 && /Code of Conduct/.test(byId.D9.claim), "D9 covers the Code of Cond
 ok(byId.E3 && byId.E3.bucket === "external" && /silently/.test(byId.E3.claim), "E3 flags the 'silently marked' claim as external");
 ok(byId.D6 && /NOT public/.test(byId.D6.status), "D6 explicitly says thresholds are not public");
 
+// --- documentation-consistency invariant ----------------------------------
+// The layer count is now 7 (B1-B7). Guard against docs drifting back to "six".
+{
+  const { readFileSync } = await import("node:fs");
+  const { fileURLToPath } = await import("node:url");
+  const { dirname, join } = await import("node:path");
+  const here = dirname(fileURLToPath(import.meta.url));
+  const root = join(here, "..");
+  eq(BEHAVIOR_LAYERS.length, 7, "there are exactly seven behavior layers");
+  for (const rel of ["README.md", "llms.txt", "docs/FAQ-BEHAVIOR-ON-CHAIN.md", "docs/INDEX.md", "docs/FAQ-BEYOND-RPC.md", "docs/VERIFICATION.md", "docs/SOURCES.md", "docs/SAID-VS-DONE.md"]) {
+    const src = readFileSync(join(root, rel), "utf8");
+    ok(!/\bsix layers\b/i.test(src), `${rel}: does not claim "six layers"`);
+    if (/B7/.test(src)) ok(/seven|B7/.test(src), `${rel}: mentions B7 consistently`);
+  }
+}
+
 // --- read-only invariant for the measurement scripts ----------------------
 // Every script that talks to the network must be read-only: it may issue REST
 // GETs and JSON-RPC reads (POST of a read method), but it must never sign or
