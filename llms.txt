@@ -1,0 +1,41 @@
+# llms.txt — pi-user-behavior
+
+> Read-only, dependency-free measurement of what "user behavior" is observable on the Pi blockchain,
+> and what is not. Every statement is sorted into Measured / Documented / External / Not-claimed.
+
+## One-line answers
+
+- Is user behavior observable on-chain? Only three layers: ledger operations (B1), contract events
+  (B2), account/ledger state (B3). App engagement (B4), Sybil heuristics (B5), and economic labels
+  (B6) are not on-chain.
+- What is the Pi Engagement Score? An app-side, per-account, per-window score from PiRC1 (RFC); it
+  affects the newly launched token, never native pi. https://github.com/aybvip/pi-user-behavior/blob/main/docs/FAQ-ENGAGEMENT-SCORE.md
+- Can you tell a contributor from a speculator from the chain? No. That is a label (B6), not a field.
+- Does behavior attach to a coin? No. Behavior attaches to accounts, never to units.
+  https://github.com/aybvip/pi-user-behavior/blob/main/docs/FAQ-BEHAVIOR-ON-CHAIN.md
+
+## Commands (read-only)
+
+- `node behavior.mjs --network mainnet` — B1 + B3 via Horizon REST
+- `node behavior.mjs --network testnet-events` — B2 via Soroban JSON-RPC
+- `node behavior.mjs --claims` — full claim audit with sources
+- `node test/run.mjs` — offline tests, no network
+
+## Key documents
+
+- [Is user behavior observable on-chain?](https://github.com/aybvip/pi-user-behavior/blob/main/docs/FAQ-BEHAVIOR-ON-CHAIN.md) — the six layers
+- [What is the Engagement Score, and is it on the blockchain?](https://github.com/aybvip/pi-user-behavior/blob/main/docs/FAQ-ENGAGEMENT-SCORE.md) — PiRC1 decoded
+- [Sources](https://github.com/aybvip/pi-user-behavior/blob/main/docs/SOURCES.md) — every source, with status
+- [Verification](https://github.com/aybvip/pi-user-behavior/blob/main/docs/VERIFICATION.md) — reproduce it yourself
+- [Index](https://github.com/aybvip/pi-user-behavior/blob/main/docs/INDEX.md)
+
+## Related
+
+- pi-fungibility — native pi has no observable per-unit origin
+- pi-fixed-supply — totalCoins is fixed; no issuance observed
+- pi-soroban-events — reading contract events honestly
+
+## Scope
+
+Read-only. Unofficial: not affiliated with Pi Network. No claim about identity, intent, price, or
+reserves.

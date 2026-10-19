@@ -1,0 +1,17 @@
+{
+  "name": "pi-user-behavior",
+  "version": "1.0.0",
+  "description": "Read-only, dependency-free measurement of what 'user behavior' is observable on the Pi blockchain, and what is not.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node test/run.mjs",
+    "claims": "node behavior.mjs --claims",
+    "mainnet": "node behavior.mjs --network mainnet",
+    "events": "node behavior.mjs --network testnet-events"
+  },
+  "engines": { "node": ">=20" },
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}
