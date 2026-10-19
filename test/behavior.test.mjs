@@ -114,7 +114,7 @@ ok(byId.D6 && /NOT public/.test(byId.D6.status), "D6 explicitly says thresholds 
   const here = dirname(fileURLToPath(import.meta.url));
   const root = join(here, "..");
   eq(BEHAVIOR_LAYERS.length, 7, "there are exactly seven behavior layers");
-  for (const rel of ["README.md", "llms.txt", "docs/FAQ-BEHAVIOR-ON-CHAIN.md", "docs/INDEX.md", "docs/FAQ-BEYOND-RPC.md", "docs/VERIFICATION.md", "docs/SOURCES.md", "docs/SAID-VS-DONE.md", "docs/FAQ-CONTRIBUTION-PROFILE-PROPOSAL.md"]) {
+  for (const rel of ["README.md", "llms.txt", "docs/FAQ-BEHAVIOR-ON-CHAIN.md", "docs/INDEX.md", "docs/FAQ-BEYOND-RPC.md", "docs/VERIFICATION.md", "docs/SOURCES.md", "docs/SAID-VS-DONE.md", "docs/FAQ-CONTRIBUTION-PROFILE-PROPOSAL.md", "docs/FAQ-PI-BROWSER-PROFILE.md"]) {
     const src = readFileSync(join(root, rel), "utf8");
     ok(!/\bsix layers\b/i.test(src), `${rel}: does not claim "six layers"`);
     if (/B7/.test(src)) ok(/seven|B7/.test(src), `${rel}: mentions B7 consistently`);
@@ -133,6 +133,23 @@ ok(byId.D6 && /NOT public/.test(byId.D6.status), "D6 explicitly says thresholds 
   ok(/does not change what this repository is|stays a measurement/i.test(page), "profile-proposal page declares the repo scope unchanged");
   ok(/four independent axes/i.test(page), "profile-proposal page keeps four axes, not one score");
   ok(/no .*combined score|no\*\* combined score|exposes \*\*no\*\* combined score/i.test(page), "profile-proposal page refuses a combined score");
+}
+
+// --- the Pi Browser Profile page must classify it as B6 and not measurable ---
+{
+  const { readFileSync } = await import("node:fs");
+  const { fileURLToPath } = await import("node:url");
+  const { dirname, join } = await import("node:path");
+  const here = dirname(fileURLToPath(import.meta.url));
+  const page = readFileSync(join(here, "..", "docs", "FAQ-PI-BROWSER-PROFILE.md"), "utf8");
+  ok(/Pi Social Profiles/.test(page), "browser-profile page names the official object");
+  ok(/3\.36 million/.test(page), "browser-profile page quotes the official scale figure");
+  ok(/\bB6\b/.test(page), "browser-profile page classifies the profile as layer B6");
+  ok(/UserDTO/.test(page), "browser-profile page cites the official UserDTO");
+  ok(/no field at all|contains \*\*no field\*\*/i.test(page), "browser-profile page states UserDTO has no profile fields");
+  ok(/not a measurement source|not measurable/i.test(page), "browser-profile page refuses to treat the profile as a measurement source");
+  ok(/does not claim the profile is on-chain|We do \*\*not\*\* claim the profile is on-chain/i.test(page), "browser-profile page does not claim on-chain presence");
+  ok(/presence, not\s+contribution|presence, not contribution/i.test(page), "browser-profile page keeps presence distinct from contribution");
 }
 
 // --- read-only invariant for the measurement scripts ----------------------

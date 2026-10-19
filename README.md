@@ -154,6 +154,7 @@ See [`docs/FAQ-BEHAVIOR-ON-CHAIN.md`](docs/FAQ-BEHAVIOR-ON-CHAIN.md) and
 - [`docs/FAQ-BEHAVIOR-ON-CHAIN.md`](docs/FAQ-BEHAVIOR-ON-CHAIN.md) - is behavior observable on-chain? (the layers)
 - [`docs/FAQ-ENGAGEMENT-SCORE.md`](docs/FAQ-ENGAGEMENT-SCORE.md) — the `Engagement Score`, decoded
 - [`docs/FAQ-BEYOND-RPC.md`](docs/FAQ-BEYOND-RPC.md) — behavior **beyond the RPC**: multi-accounting, Sybil defense, PiVerify, social media, Code of Conduct
+- [`docs/FAQ-PI-BROWSER-PROFILE.md`](docs/FAQ-PI-BROWSER-PROFILE.md) — the Pi Browser **Profile** (Pi Social Profiles): official, millions of them — and why it is **B6**, not a measurement source
 - [`docs/FAQ-CONTRIBUTION-PROFILE-PROPOSAL.md`](docs/FAQ-CONTRIBUTION-PROFILE-PROPOSAL.md) — "develop this into a Pioneer contribution profile?" — recorded, and answered with the measured constraint
 - [`docs/SAID-VS-DONE.md`](docs/SAID-VS-DONE.md) — what Pi **stated** vs what Pi **shipped** (official quotes vs measured state)
 - [`docs/SOURCES.md`](docs/SOURCES.md) — every source, with status (official / RFC / external)
@@ -180,10 +181,12 @@ node test/run.mjs
 
 Offline, deterministic, dependency-free. Two suites: `behavior.test.mjs` (pure helpers +
 claim-table integrity + behavior-layer taxonomy + a read-only invariant for the measurement
-scripts + doc-consistency guards) and `cli.test.mjs` (argument parsing + exit codes). **147
+scripts + doc-consistency guards) and `cli.test.mjs` (argument parsing + exit codes). **157
 assertions, 0 failures.** The suite asserts the invariant that **no Measured claim asserts an
-on-chain engagement/Sybil score exists**, that the scripts never sign or submit, and that the
-contribution-profile page cannot weaken this repo's measurement scope.
+on-chain engagement/Sybil score exists**, that the scripts never sign or submit, that the
+contribution-profile page cannot weaken this repo's measurement scope, and that the Pi Browser
+profile page classifies Pi Social Profiles as layer **B6** (off-chain, owner-held) rather than a
+measurement source.
 
 ## License
 

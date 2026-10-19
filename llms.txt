@@ -32,6 +32,7 @@
 - [Is user behavior observable on-chain?](https://github.com/aybvip/pi-user-behavior/blob/main/docs/FAQ-BEHAVIOR-ON-CHAIN.md) — the seven layers (B1–B7)
 - [What is the Engagement Score, and is it on the blockchain?](https://github.com/aybvip/pi-user-behavior/blob/main/docs/FAQ-ENGAGEMENT-SCORE.md) — PiRC1 decoded
 - [Behavior beyond the RPC: multi-accounting, Sybil, social media, PiVerify](https://github.com/aybvip/pi-user-behavior/blob/main/docs/FAQ-BEYOND-RPC.md) — the enforcement layer (B7)
+- [The Pi Browser Profile (Pi Social Profiles): is it the user's behavior?](https://github.com/aybvip/pi-user-behavior/blob/main/docs/FAQ-PI-BROWSER-PROFILE.md) — official, 3.36M+ profiles, but a B6 object: off-chain, owner-held, and no developer API exposes it (the official UserDTO has only uid, scopes, username)
 - [Develop this into a Pioneer Contribution Profile?](https://github.com/aybvip/pi-user-behavior/blob/main/docs/FAQ-CONTRIBUTION-PROFILE-PROPOSAL.md) — the off-chain evidence proposal, recorded and answered; a global cross-app profile is not buildable because Pi's uid is app-specific
 - [Said vs Done: what Pi stated vs what Pi shipped](https://github.com/aybvip/pi-user-behavior/blob/main/docs/SAID-VS-DONE.md) — official quotes vs measured network state
 - [Sources](https://github.com/aybvip/pi-user-behavior/blob/main/docs/SOURCES.md) — every source, with status

@@ -97,6 +97,16 @@ itself says the document people cite as a plan **is not a plan anymore**.
 
 **Status: `shipped as policy` / `not-observable on-chain`.**
 
+### C4. **Pi Social Profiles** — an official profile per Pioneer, readable only by Pi
+
+| Pi said | Pi did (observed) |
+|---|---|
+| Pi2Day 2024 released **Pi Social Profiles**: *"an open social identity"* with a **profile picture**, **followers**, **presence**, and *"your activities on various Pi apps"*, with **privacy controls**; *"over **3.36 million** Pioneers"'* had set one up. Pi **Badges** (2026-02-26) then used concrete activity milestones — **365 mined days**, **2,000+ hours in Pi Chats**, **50+ Pi apps explored** *(Dec 2024 – Dec 2025)* — displayed on Chats / Forum / **Profiles**. | The profile lives **inside the Pi Browser**. The official developer object — `UserDTO` — has **only** `uid`, `credentials.scopes`, `username?`: **no** picture, followers, badges, or activity fields. There is **no developer endpoint** for a profile, and no `profile`/`badge`/`engagement` topic appears in the measured Mainnet operation window or the Testnet event vocabulary. |
+
+**Status: `shipped (product)` / `not-observable on-chain` and `not-readable by third parties`.** This is
+the clearest instance of layer **B6**: a large, officially-tracked social object that is entirely
+**off-chain and owner-held**. See [`FAQ-PI-BROWSER-PROFILE.md`](FAQ-PI-BROWSER-PROFILE.md).
+
 ---
 
 ## D. Numbers Pi states that we **cannot** verify from the chain

@@ -17,7 +17,10 @@ intent)** from **external (unofficial)** on purpose.
 | S9 | `https://minepi.com/roadmap/` | Pi's own banner: roadmap is "no longer being updated or maintained … historical reference only" | **Official — self-declared frozen** |
 | S10 | `https://minepi.com/blog/pi-day-2026/` | Pi Day 2026 releases (App Studio on Mainnet, persistent payments) | **Official blog post** |
 | S11 | `https://github.com/pi-apps/pi-platform-docs/blob/master/pi-sign-in.md` | `uid` is app-specific; "two apps cannot correlate the same person"; `GET /v2/me`; scopes | **Official developer guide** |
-| S12 | `https://docs.minepi.com/api-reference/PlatformAPI` | `/me` returns only consented fields; `uid` changes on revoke; Server API Key rules | **Official API reference** |
+| S12 | `https://docs.minepi.com/api-reference/PlatformAPI` | `/me` returns only consented fields; `uid` changes on revoke; Server API Key rules; `UserDTO` has only `uid`/`credentials`/`username` | **Official API reference** |
+| S13 | `https://minepi.com/blog/social-profiles/` | Pi Social Profiles (Pi2Day 2024): picture, followers, app-activity presence, privacy controls; "over 3.36 million Pioneers" | **Official blog post** |
+| S14 | `https://minepi.com/blog/badges-ecosystem-token/` | Pi Badges (2026-02-26): milestones 365 mined days, 2,000+ hours in Pi Chats, 50+ Pi apps explored; shown on Chats/Forum/Profiles | **Official blog post** |
+| S15 | `https://minepi.com/blog/dev-capabilities-documentation/` | 2026-09-04: local storage (device-bound), app-specific staking data API, `Pi.shareFile` | **Official blog post** |
 | S5 | `https://minepi.com/white-paper/` | Network description (context only) | **Official** |
 
 ## Official — RFC (design intent, not final Mainnet spec)

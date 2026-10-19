@@ -10,6 +10,7 @@ Read-only measurement of what "user behavior" is observable on the Pi blockchain
 | [`FAQ-BEHAVIOR-ON-CHAIN.md`](FAQ-BEHAVIOR-ON-CHAIN.md) | "Is user behavior observable on-chain?" — layer by layer, with what each layer can and cannot prove |
 | [`FAQ-ENGAGEMENT-SCORE.md`](FAQ-ENGAGEMENT-SCORE.md) | "What is the `Engagement Score`, and is it on the blockchain?" — the official PiRC1 mechanism, decoded |
 | [`FAQ-BEYOND-RPC.md`](FAQ-BEYOND-RPC.md) | "You only measure the RPC — what about multi-accounting, Sybil detection, social media, PiVerify, the Code of Conduct?" — the enforcement layer (B7) |
+| [`FAQ-PI-BROWSER-PROFILE.md`](FAQ-PI-BROWSER-PROFILE.md) | "The Pi Browser has a Profile per Pioneer — isn't that the user's behavior?" — official Pi Social Profiles, and why they are B6 (off-chain, owner-held) |
 | [`FAQ-CONTRIBUTION-PROFILE-PROPOSAL.md`](FAQ-CONTRIBUTION-PROFILE-PROPOSAL.md) | "Develop this into a Pioneer Contribution Profile with off-chain evidence?" — the proposal, recorded and answered |
 | [`SAID-VS-DONE.md`](SAID-VS-DONE.md) | What Pi **stated** vs what Pi **shipped** — official quotes side by side with measured state |
 | [`SOURCES.md`](SOURCES.md) | Every source used, with status (official / RFC / external) |
