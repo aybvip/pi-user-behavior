@@ -10,6 +10,7 @@ Read-only measurement of what "user behavior" is observable on the Pi blockchain
 | [`FAQ-BEHAVIOR-ON-CHAIN.md`](FAQ-BEHAVIOR-ON-CHAIN.md) | "Is user behavior observable on-chain?" — layer by layer, with what each layer can and cannot prove |
 | [`FAQ-ENGAGEMENT-SCORE.md`](FAQ-ENGAGEMENT-SCORE.md) | "What is the `Engagement Score`, and is it on the blockchain?" — the official PiRC1 mechanism, decoded |
 | [`FAQ-BEYOND-RPC.md`](FAQ-BEYOND-RPC.md) | "You only measure the RPC — what about multi-accounting, Sybil detection, social media, PiVerify, the Code of Conduct?" — the enforcement layer (B7) |
+| [`SAID-VS-DONE.md`](SAID-VS-DONE.md) | What Pi **stated** vs what Pi **shipped** — official quotes side by side with measured state |
 | [`SOURCES.md`](SOURCES.md) | Every source used, with status (official / RFC / external) |
 | [`VERIFICATION.md`](VERIFICATION.md) | How to reproduce each measured claim yourself |
 
@@ -43,6 +44,7 @@ Every statement in this repo is sorted into exactly one bucket:
 | `node behavior.mjs --network mainnet` | B1 + B3 (Horizon REST) |
 | `node behavior.mjs --network testnet-events` | B2 (Soroban JSON-RPC) |
 | `node behavior.mjs --claims` | Prints the full claim audit |
+| `node said-vs-done.mjs` | Re-measures the "Said vs Done" facts (both networks) |
 | `node test/run.mjs` | Offline test suite (no network) |
 
 ## The master boundary

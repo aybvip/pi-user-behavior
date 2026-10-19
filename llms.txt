@@ -32,6 +32,7 @@
 - [Is user behavior observable on-chain?](https://github.com/aybvip/pi-user-behavior/blob/main/docs/FAQ-BEHAVIOR-ON-CHAIN.md) — the six layers
 - [What is the Engagement Score, and is it on the blockchain?](https://github.com/aybvip/pi-user-behavior/blob/main/docs/FAQ-ENGAGEMENT-SCORE.md) — PiRC1 decoded
 - [Behavior beyond the RPC: multi-accounting, Sybil, social media, PiVerify](https://github.com/aybvip/pi-user-behavior/blob/main/docs/FAQ-BEYOND-RPC.md) — the enforcement layer (B7)
+- [Said vs Done: what Pi stated vs what Pi shipped](https://github.com/aybvip/pi-user-behavior/blob/main/docs/SAID-VS-DONE.md) — official quotes vs measured network state
 - [Sources](https://github.com/aybvip/pi-user-behavior/blob/main/docs/SOURCES.md) — every source, with status
 - [Verification](https://github.com/aybvip/pi-user-behavior/blob/main/docs/VERIFICATION.md) — reproduce it yourself
 - [Index](https://github.com/aybvip/pi-user-behavior/blob/main/docs/INDEX.md)

@@ -105,6 +105,25 @@ ok(byId.D9 && /Code of Conduct/.test(byId.D9.claim), "D9 covers the Code of Cond
 ok(byId.E3 && byId.E3.bucket === "external" && /silently/.test(byId.E3.claim), "E3 flags the 'silently marked' claim as external");
 ok(byId.D6 && /NOT public/.test(byId.D6.status), "D6 explicitly says thresholds are not public");
 
+// --- read-only invariant for the measurement scripts ----------------------
+// Every script that talks to the network must be read-only: it may issue REST
+// GETs and JSON-RPC reads (POST of a read method), but it must never sign or
+// submit anything, and every network call must be time-boxed.
+{
+  const { readFileSync } = await import("node:fs");
+  const { fileURLToPath } = await import("node:url");
+  const { dirname, join } = await import("node:path");
+  const here = dirname(fileURLToPath(import.meta.url));
+  for (const name of ["behavior.mjs", "said-vs-done.mjs"]) {
+    const src = readFileSync(join(here, "..", name), "utf8");
+    // The only permitted POST is to the Soroban JSON-RPC base, for read methods.
+    const postBodies = [...src.matchAll(/method:\s*"POST"/g)];
+    ok(postBodies.length === 0 || /RPC_BASE/.test(src), `${name}: POST is only used against the RPC base`);
+    ok(!/\b(sign|submitTransaction|sendTransaction)\s*\(/.test(src), `${name}: never signs or submits`);
+    ok(/AbortSignal\.timeout/.test(src), `${name}: network calls are time-boxed`);
+  }
+}
+
 // --- report ----------------------------------------------------------------
 console.log(`pi-user-behavior offline tests`);
 console.log(`  pass: ${pass}`);

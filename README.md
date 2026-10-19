@@ -46,7 +46,7 @@ about price. We do **not** claim to reproduce Pi's internal scoring — it is no
 | B4 | **App engagement** | `Engagement Score`, app interactions, clickstream | **No** — app/off-chain only |
 | B5 | **Network-level heuristics** | Sybil detection, device fingerprint, referral graph | **No** — internal, off-chain |
 | B6 | **Economic intent** | "contributor vs speculator", "diamond hand" | **No** — a *category*, not a measured field |
-| B7 | **Identity & enforcement** | one-account-per-person, KYC, Security Circles, PiVerify | **No** - account/identity level |
+| B7 | **Identity & enforcement** | one-account-per-person, KYC, Security Circles, PiVerify | **No** — account/identity level |
 
 The code in this repo measures **B1–B3** directly and pins the **B4–B7** claims to their official
 sources (or flags them as external/inferred). See
@@ -68,7 +68,10 @@ node behavior.mjs --network testnet-events
 # 3. Print the claim audit (what is measured vs documented vs external)
 node behavior.mjs --claims
 
-# 4. Run the offline test suite (no network)
+# 4. Re-measure the "Said vs Done" facts on both networks
+node said-vs-done.mjs
+
+# 5. Run the offline test suite (no network)
 node test/run.mjs
 ```
 
@@ -151,6 +154,7 @@ See [`docs/FAQ-BEHAVIOR-ON-CHAIN.md`](docs/FAQ-BEHAVIOR-ON-CHAIN.md) and
 - [`docs/FAQ-BEHAVIOR-ON-CHAIN.md`](docs/FAQ-BEHAVIOR-ON-CHAIN.md) - is behavior observable on-chain? (the layers)
 - [`docs/FAQ-ENGAGEMENT-SCORE.md`](docs/FAQ-ENGAGEMENT-SCORE.md) — the `Engagement Score`, decoded
 - [`docs/FAQ-BEYOND-RPC.md`](docs/FAQ-BEYOND-RPC.md) — behavior **beyond the RPC**: multi-accounting, Sybil defense, PiVerify, social media, Code of Conduct
+- [`docs/SAID-VS-DONE.md`](docs/SAID-VS-DONE.md) — what Pi **stated** vs what Pi **shipped** (official quotes vs measured state)
 - [`docs/SOURCES.md`](docs/SOURCES.md) — every source, with status (official / RFC / external)
 - [`docs/VERIFICATION.md`](docs/VERIFICATION.md) — reproduce each measured claim yourself
 - [`docs/INDEX.md`](docs/INDEX.md) — documentation index
@@ -174,9 +178,10 @@ node test/run.mjs
 ```
 
 Offline, deterministic, dependency-free. Two suites: `behavior.test.mjs` (pure helpers +
-claim-table integrity + behavior-layer taxonomy) and `cli.test.mjs` (argument parsing + exit codes).
-**120 assertions, 0 failures.** The suite asserts the invariant that **no Measured claim asserts an
-on-chain engagement/Sybil score exists**.
+claim-table integrity + behavior-layer taxonomy + a read-only invariant for the measurement
+scripts) and `cli.test.mjs` (argument parsing + exit codes). **126 assertions, 0 failures.** The
+suite asserts the invariant that **no Measured claim asserts an on-chain engagement/Sybil score
+exists**, and that the scripts never sign or submit.
 
 ## License
 

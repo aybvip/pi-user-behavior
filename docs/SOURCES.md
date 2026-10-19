@@ -14,6 +14,8 @@ intent)** from **external (unofficial)** on purpose.
 | S6 | `https://minepi.com/faqs/can-i-mine-from-more-than-one-device-how-does-pi-network-prevent-fake-accounts-bots-etc-from-mining-pi/` | One-account-per-person rule; multi-pronged anti-bot strategy (third-party checks + ML, Security Circles, native KYC) | **Official FAQ** |
 | S7 | `https://minepi.com/blog/pi2day2026/` (2026-06-28) | PiVerify (KYC + duplicate detection for third parties); SoloHost; Pi Sign-in; 18M+ KYC verified | **Official blog post** |
 | S8 | `https://minepi.com/support/` | "native, decentralized KYC process to identify and verify that the members have only one account" | **Official support page** |
+| S9 | `https://minepi.com/roadmap/` | Pi's own banner: roadmap is "no longer being updated or maintained … historical reference only" | **Official — self-declared frozen** |
+| S10 | `https://minepi.com/blog/pi-day-2026/` | Pi Day 2026 releases (App Studio on Mainnet, persistent payments) | **Official blog post** |
 | S5 | `https://minepi.com/white-paper/` | Network description (context only) | **Official** |
 
 ## Official — RFC (design intent, not final Mainnet spec)

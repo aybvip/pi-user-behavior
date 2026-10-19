@@ -60,10 +60,26 @@ the measured 100-event page cap.
 node behavior.mjs --claims
 ```
 
+## 5. Re-measure "Said vs Done" (both networks)
+
+```bash
+node said-vs-done.mjs
+```
+
+Expected shape:
+
+- **Mainnet**: `network_passphrase : Pi Network`, `protocol_version : 28`,
+  `total_coins : 100000000000.0000000`, `/assets records : 0`,
+  `contract invocations : NOT OBSERVED in window`.
+- **Testnet**: `network_passphrase : Pi Testnet`, `retention window : 120960 ledgers`,
+  a non-zero event count.
+
+This is the evidence behind [`SAID-VS-DONE.md`](SAID-VS-DONE.md) section B.
+
 Each claim prints its **bucket** (measured / documented / external / not-claimed), a **detail**, a
 **source**, and a **status**. External claims are always labelled unofficial.
 
-## 5. What you should *not* be able to reproduce
+## 6. What you should *not* be able to reproduce
 
 - An on-chain `Engagement Score` field or event. (It is app-side, B4.)
 - A per-unit "behavior" or "origin" tag on native π. (It does not exist.)
@@ -71,7 +87,7 @@ Each claim prints its **bucket** (measured / documented / external / not-claimed
 
 If any of these ever becomes reproducible, this repo should be updated — with the measurement.
 
-## 6. Boundary and scope
+## 7. Boundary and scope
 
 - Read-only: only `GET` / read-only `POST` (JSON-RPC reads). Nothing is signed or submitted.
 - Unofficial: not affiliated with Pi Network.
