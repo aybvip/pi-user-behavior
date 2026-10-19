@@ -16,6 +16,8 @@ intent)** from **external (unofficial)** on purpose.
 | S8 | `https://minepi.com/support/` | "native, decentralized KYC process to identify and verify that the members have only one account" | **Official support page** |
 | S9 | `https://minepi.com/roadmap/` | Pi's own banner: roadmap is "no longer being updated or maintained … historical reference only" | **Official — self-declared frozen** |
 | S10 | `https://minepi.com/blog/pi-day-2026/` | Pi Day 2026 releases (App Studio on Mainnet, persistent payments) | **Official blog post** |
+| S11 | `https://github.com/pi-apps/pi-platform-docs/blob/master/pi-sign-in.md` | `uid` is app-specific; "two apps cannot correlate the same person"; `GET /v2/me`; scopes | **Official developer guide** |
+| S12 | `https://docs.minepi.com/api-reference/PlatformAPI` | `/me` returns only consented fields; `uid` changes on revoke; Server API Key rules | **Official API reference** |
 | S5 | `https://minepi.com/white-paper/` | Network description (context only) | **Official** |
 
 ## Official — RFC (design intent, not final Mainnet spec)

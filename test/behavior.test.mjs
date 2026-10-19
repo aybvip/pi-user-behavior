@@ -114,11 +114,25 @@ ok(byId.D6 && /NOT public/.test(byId.D6.status), "D6 explicitly says thresholds 
   const here = dirname(fileURLToPath(import.meta.url));
   const root = join(here, "..");
   eq(BEHAVIOR_LAYERS.length, 7, "there are exactly seven behavior layers");
-  for (const rel of ["README.md", "llms.txt", "docs/FAQ-BEHAVIOR-ON-CHAIN.md", "docs/INDEX.md", "docs/FAQ-BEYOND-RPC.md", "docs/VERIFICATION.md", "docs/SOURCES.md", "docs/SAID-VS-DONE.md"]) {
+  for (const rel of ["README.md", "llms.txt", "docs/FAQ-BEHAVIOR-ON-CHAIN.md", "docs/INDEX.md", "docs/FAQ-BEYOND-RPC.md", "docs/VERIFICATION.md", "docs/SOURCES.md", "docs/SAID-VS-DONE.md", "docs/FAQ-CONTRIBUTION-PROFILE-PROPOSAL.md"]) {
     const src = readFileSync(join(root, rel), "utf8");
     ok(!/\bsix layers\b/i.test(src), `${rel}: does not claim "six layers"`);
     if (/B7/.test(src)) ok(/seven|B7/.test(src), `${rel}: mentions B7 consistently`);
   }
+}
+
+// --- the contribution-profile page must not weaken the repo's scope ---------
+{
+  const { readFileSync } = await import("node:fs");
+  const { fileURLToPath } = await import("node:url");
+  const { dirname, join } = await import("node:path");
+  const here = dirname(fileURLToPath(import.meta.url));
+  const page = readFileSync(join(here, "..", "docs", "FAQ-CONTRIBUTION-PROFILE-PROPOSAL.md"), "utf8");
+  ok(/app-specific/.test(page), "profile-proposal page states uid is app-specific");
+  ok(/cannot correlate the same person/.test(page), "profile-proposal page quotes the official correlation limit");
+  ok(/does not change what this repository is|stays a measurement/i.test(page), "profile-proposal page declares the repo scope unchanged");
+  ok(/four independent axes/i.test(page), "profile-proposal page keeps four axes, not one score");
+  ok(/no .*combined score|no\*\* combined score|exposes \*\*no\*\* combined score/i.test(page), "profile-proposal page refuses a combined score");
 }
 
 // --- read-only invariant for the measurement scripts ----------------------

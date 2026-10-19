@@ -154,6 +154,7 @@ See [`docs/FAQ-BEHAVIOR-ON-CHAIN.md`](docs/FAQ-BEHAVIOR-ON-CHAIN.md) and
 - [`docs/FAQ-BEHAVIOR-ON-CHAIN.md`](docs/FAQ-BEHAVIOR-ON-CHAIN.md) - is behavior observable on-chain? (the layers)
 - [`docs/FAQ-ENGAGEMENT-SCORE.md`](docs/FAQ-ENGAGEMENT-SCORE.md) — the `Engagement Score`, decoded
 - [`docs/FAQ-BEYOND-RPC.md`](docs/FAQ-BEYOND-RPC.md) — behavior **beyond the RPC**: multi-accounting, Sybil defense, PiVerify, social media, Code of Conduct
+- [`docs/FAQ-CONTRIBUTION-PROFILE-PROPOSAL.md`](docs/FAQ-CONTRIBUTION-PROFILE-PROPOSAL.md) — "develop this into a Pioneer contribution profile?" — recorded, and answered with the measured constraint
 - [`docs/SAID-VS-DONE.md`](docs/SAID-VS-DONE.md) — what Pi **stated** vs what Pi **shipped** (official quotes vs measured state)
 - [`docs/SOURCES.md`](docs/SOURCES.md) — every source, with status (official / RFC / external)
 - [`docs/VERIFICATION.md`](docs/VERIFICATION.md) — reproduce each measured claim yourself
@@ -179,9 +180,10 @@ node test/run.mjs
 
 Offline, deterministic, dependency-free. Two suites: `behavior.test.mjs` (pure helpers +
 claim-table integrity + behavior-layer taxonomy + a read-only invariant for the measurement
-scripts) and `cli.test.mjs` (argument parsing + exit codes). **126 assertions, 0 failures.** The
-suite asserts the invariant that **no Measured claim asserts an on-chain engagement/Sybil score
-exists**, and that the scripts never sign or submit.
+scripts + doc-consistency guards) and `cli.test.mjs` (argument parsing + exit codes). **147
+assertions, 0 failures.** The suite asserts the invariant that **no Measured claim asserts an
+on-chain engagement/Sybil score exists**, that the scripts never sign or submit, and that the
+contribution-profile page cannot weaken this repo's measurement scope.
 
 ## License
 
