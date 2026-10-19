@@ -9,6 +9,7 @@ Read-only measurement of what "user behavior" is observable on the Pi blockchain
 | [`../README.md`](../README.md) | Overview, the six behavior layers (B1–B6), quick start, and the master boundary table |
 | [`FAQ-BEHAVIOR-ON-CHAIN.md`](FAQ-BEHAVIOR-ON-CHAIN.md) | "Is user behavior observable on-chain?" — layer by layer, with what each layer can and cannot prove |
 | [`FAQ-ENGAGEMENT-SCORE.md`](FAQ-ENGAGEMENT-SCORE.md) | "What is the `Engagement Score`, and is it on the blockchain?" — the official PiRC1 mechanism, decoded |
+| [`FAQ-BEYOND-RPC.md`](FAQ-BEYOND-RPC.md) | "You only measure the RPC — what about multi-accounting, Sybil detection, social media, PiVerify, the Code of Conduct?" — the enforcement layer (B7) |
 | [`SOURCES.md`](SOURCES.md) | Every source used, with status (official / RFC / external) |
 | [`VERIFICATION.md`](VERIFICATION.md) | How to reproduce each measured claim yourself |
 
@@ -33,6 +34,7 @@ Every statement in this repo is sorted into exactly one bucket:
 | B4 | App engagement (`Engagement Score`) | ❌ app-side |
 | B5 | Network-level Sybil heuristics | ❌ internal / external |
 | B6 | Economic intent ("contributor" / "speculator") | ❌ a label, not a field |
+| B7 | Identity & enforcement (one-account rule, KYC, Security Circles, PiVerify) | ❌ account/identity level |
 
 ## Commands
 

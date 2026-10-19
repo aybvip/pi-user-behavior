@@ -11,6 +11,9 @@ intent)** from **external (unofficial)** on purpose.
 | S2 | `https://rpc.testnet.minepi.com` (Soroban JSON-RPC) | B2 event-topic vocabulary (`getEvents`, `xdrFormat: "json"`) | **Official** — network passphrase `Pi Testnet`, protocol 28, retention 120,960 ledgers |
 | S3 | `https://minepi.com/blog/launchpad-update-flow` (2026-06-11) | Deterministic hold/commit curve; engagement reframed as token bonus; IRRA/SLICE Testnet figures | **Official blog post** |
 | S4 | `https://minepi.com/pioneer-code-of-conduct` | "Expected / unacceptable behavior" is a *community policy*, not a ledger quantity | **Official policy** |
+| S6 | `https://minepi.com/faqs/can-i-mine-from-more-than-one-device-how-does-pi-network-prevent-fake-accounts-bots-etc-from-mining-pi/` | One-account-per-person rule; multi-pronged anti-bot strategy (third-party checks + ML, Security Circles, native KYC) | **Official FAQ** |
+| S7 | `https://minepi.com/blog/pi2day2026/` (2026-06-28) | PiVerify (KYC + duplicate detection for third parties); SoloHost; Pi Sign-in; 18M+ KYC verified | **Official blog post** |
+| S8 | `https://minepi.com/support/` | "native, decentralized KYC process to identify and verify that the members have only one account" | **Official support page** |
 | S5 | `https://minepi.com/white-paper/` | Network description (context only) | **Official** |
 
 ## Official — RFC (design intent, not final Mainnet spec)
@@ -31,6 +34,7 @@ intent)** from **external (unofficial)** on purpose.
 |---|---|---|---|
 | X1 | Third-party exchange wiki (e.g. `bybit.com/en/wiki`) | Anti-Sybil "behavioral signals" (login frequency, device fingerprints, geographic clustering, referral patterns) | **UNOFFICIAL** — Pi's real features/thresholds are not public |
 | X2 | Social posts attributed to `@PiCoreTeam` (counts such as "60M Engaged Pioneers") | Headline engagement counts | **UNOFFICIAL mirror of an official statement** — not a ledger-observable quantity |
+| X3 | Community threads claiming multi-account users are "silently marked" | Suggesting an enforcement mechanism | **UNOFFICIAL (community)** — the one-account rule is official; the mechanism detail is not confirmed |
 
 These are included **only** to show how the words "user behavior" circulate, and are always labelled
 as external/unverified. See `node behavior.mjs --claims`.

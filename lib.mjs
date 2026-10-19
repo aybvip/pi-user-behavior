@@ -80,6 +80,7 @@ export const BEHAVIOR_LAYERS = [
   { id: "B4", name: "App engagement", onChain: false, example: "Launchpad Engagement Score - app-side, per window, off-chain" },
   { id: "B5", name: "Network-level heuristics", onChain: false, example: "Sybil detection, device fingerprint, referral graph (internal)" },
   { id: "B6", name: "Economic intent / label", onChain: false, example: "contributor vs speculator - a category someone applies, not a field" },
+  { id: "B7", name: "Off-chain identity & enforcement", onChain: false, example: "one-account-per-person rule, KYC, Security Circles, PiVerify - enforcement is outside the ledger" },
 ];
 
 // ---------------------------------------------------------------------------
@@ -159,12 +160,52 @@ export const CLAIMS = [
     status: "unverified - flagged unofficial; not reproducibly measurable",
   },
   {
+    id: "D6",
+    bucket: "documented",
+    claim: "Pi states it uses a multi-pronged strategy against fake accounts and bots: third-party checks + native ML, Security Circles, and native decentralized KYC.",
+    detail: "\"a multi-pronged strategy to safeguard against fake accounts and bots\" - recaptcha-style third-party checks + ML; \"Security Circles ... make it easy to detect fake accounts\"; KYC as \"a final system check\".",
+    source: "https://minepi.com/faqs/can-i-mine-from-more-than-one-device-how-does-pi-network-prevent-fake-accounts-bots-etc-from-mining-pi/ (official FAQ)",
+    status: "official - method described, thresholds and signals NOT public",
+  },
+  {
+    id: "D7",
+    bucket: "documented",
+    claim: "The rule is one Pi account per person; only KYC-validated distinct-real-individual accounts are honoured on Mainnet.",
+    detail: "\"Pioneers are only allowed one Pi account per person\" ... \"only accounts validated as belonging to distinct real individuals will be honored on the Mainnet blockchain.\"",
+    source: "https://minepi.com/faqs/can-i-mine-from-more-than-one-device-how-does-pi-network-prevent-fake-accounts-bots-etc-from-mining-pi/ (official FAQ)",
+    status: "official policy",
+  },
+  {
+    id: "D8",
+    bucket: "documented",
+    claim: "Pi2Day 2026 released PiVerify, making Pi's KYC real-human verification available to third parties, including duplicate detection.",
+    detail: "\"PiVerify can support identity verification services such as document checks, liveness verification, sanctions and AML screening support, and duplicate detection.\" 18+ million Pioneers verified.",
+    source: "https://minepi.com/blog/pi2day2026/ (2026-06-28, official)",
+    status: "official blog post - product released, results for third parties not public",
+  },
+  {
+    id: "D9",
+    bucket: "documented",
+    claim: "The Pi Community Code of Conduct defines expected and unacceptable behavior and lists account-level consequences.",
+    detail: "Consequences include \"a temporary ban or permanent suspension of accounts\" and \"removal of privileges from, or adding restrictions to, accounts\".",
+    source: "https://minepi.com/pioneer-code-of-conduct (official policy)",
+    status: "official policy - a social/policy document, not a ledger mechanism",
+  },
+  {
     id: "E2",
     bucket: "external",
     claim: "\"Pi has over 60 million Engaged Pioneers\" and other headline counts.",
     detail: "Official social posts; the definition of 'Engaged' is not a ledger-observable quantity.",
     source: "@PiCoreTeam social posts (UNOFFICIAL mirror of an official statement - not ledger-measurable)",
     status: "unofficial mirror - not independently measurable on-chain",
+  },
+  {
+    id: "E3",
+    bucket: "external",
+    claim: "\"You cannot mine from more than one device\", and multi-account users are 'silently marked'.",
+    detail: "The one-account rule is official; the specific claim that an algorithm 'silently marks' bad actors is community/external interpretation of how enforcement works.",
+    source: "reddit.com/r/PiNetwork and similar community threads (UNOFFICIAL - community)",
+    status: "unofficial - mechanism details not confirmed by Pi",
   },
   {
     id: "N1",

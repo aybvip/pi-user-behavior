@@ -46,9 +46,11 @@ about price. We do **not** claim to reproduce Pi's internal scoring — it is no
 | B4 | **App engagement** | `Engagement Score`, app interactions, clickstream | **No** — app/off-chain only |
 | B5 | **Network-level heuristics** | Sybil detection, device fingerprint, referral graph | **No** — internal, off-chain |
 | B6 | **Economic intent** | "contributor vs speculator", "diamond hand" | **No** — a *category*, not a measured field |
+| B7 | **Identity & enforcement** | one-account-per-person, KYC, Security Circles, PiVerify | **No** - account/identity level |
 
-The code in this repo measures **B1–B3** directly and pins the **B4–B6** claims to their official
-sources (or flags them as external/inferred).
+The code in this repo measures **B1–B3** directly and pins the **B4–B7** claims to their official
+sources (or flags them as external/inferred). See
+[`docs/FAQ-BEYOND-RPC.md`](docs/FAQ-BEYOND-RPC.md) for the enforcement layer (B7) in full.
 
 ---
 
@@ -136,6 +138,7 @@ See [`docs/FAQ-BEHAVIOR-ON-CHAIN.md`](docs/FAQ-BEHAVIOR-ON-CHAIN.md) and
 | "What did this account *do* inside an app?" | ❌ | ✅ app telemetry (B4) |
 | "Is this account a Sybil?" | ❌ | ✅ internal heuristics (B5, external) |
 | "Is this holder a contributor or a speculator?" | ❌ | ✅ a **label** someone applies (B6) |
+| "Is this a banned / duplicate account?" | ❌ | ✅ enforcement is account-level, off-chain (B7) |
 | "Did the coin carry the behavior with it?" | ❌ — there is no such field | — |
 
 > **Master rule:** *Behavior belongs to an **account** (or an app), never to a **coin**. The ledger
@@ -145,8 +148,9 @@ See [`docs/FAQ-BEHAVIOR-ON-CHAIN.md`](docs/FAQ-BEHAVIOR-ON-CHAIN.md) and
 
 ## Documentation
 
-- [`docs/FAQ-BEHAVIOR-ON-CHAIN.md`](docs/FAQ-BEHAVIOR-ON-CHAIN.md) — is behavior observable on-chain? (the six layers)
+- [`docs/FAQ-BEHAVIOR-ON-CHAIN.md`](docs/FAQ-BEHAVIOR-ON-CHAIN.md) - is behavior observable on-chain? (the layers)
 - [`docs/FAQ-ENGAGEMENT-SCORE.md`](docs/FAQ-ENGAGEMENT-SCORE.md) — the `Engagement Score`, decoded
+- [`docs/FAQ-BEYOND-RPC.md`](docs/FAQ-BEYOND-RPC.md) — behavior **beyond the RPC**: multi-accounting, Sybil defense, PiVerify, social media, Code of Conduct
 - [`docs/SOURCES.md`](docs/SOURCES.md) — every source, with status (official / RFC / external)
 - [`docs/VERIFICATION.md`](docs/VERIFICATION.md) — reproduce each measured claim yourself
 - [`docs/INDEX.md`](docs/INDEX.md) — documentation index
@@ -170,9 +174,9 @@ node test/run.mjs
 ```
 
 Offline, deterministic, dependency-free. Two suites: `behavior.test.mjs` (pure helpers +
-claim-table integrity) and `cli.test.mjs` (argument parsing + exit codes). **97 assertions, 0
-failures.** The suite asserts the invariant that **no Measured claim asserts an on-chain
-engagement/Sybil score exists**.
+claim-table integrity + behavior-layer taxonomy) and `cli.test.mjs` (argument parsing + exit codes).
+**120 assertions, 0 failures.** The suite asserts the invariant that **no Measured claim asserts an
+on-chain engagement/Sybil score exists**.
 
 ## License
 

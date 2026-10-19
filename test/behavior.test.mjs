@@ -90,10 +90,20 @@ eq(assertingScore.length, 0, "no measured claim asserts an on-chain engagement/s
 
 // --- behavioral layer taxonomy --------------------------------------------
 eq(BEHAVIOR_LAYERS.filter((l) => l.onChain).map((l) => l.id), ["B1", "B2", "B3"], "on-chain layers are B1-B3");
-eq(BEHAVIOR_LAYERS.filter((l) => !l.onChain).map((l) => l.id), ["B4", "B5", "B6"], "off-chain layers are B4-B6");
+eq(BEHAVIOR_LAYERS.filter((l) => !l.onChain).map((l) => l.id), ["B4", "B5", "B6", "B7"], "off-chain layers are B4-B7");
 for (const l of BEHAVIOR_LAYERS) {
   ok(l.name && l.example, `layer ${l.id} has name and example`);
 }
+
+// --- new documented claims (beyond-RPC / enforcement) ----------------------
+const byId = Object.fromEntries(CLAIMS.map((c) => [c.id, c]));
+ok(byId.D6 && byId.D6.bucket === "documented", "D6 (multi-pronged anti-bot) is documented");
+ok(/multi-pronged/.test(byId.D6.claim), "D6 quotes the multi-pronged strategy");
+ok(byId.D7 && /one Pi account per person/.test(byId.D7.claim), "D7 states the one-account-per-person rule");
+ok(byId.D8 && /PiVerify/.test(byId.D8.claim) && /duplicate detection/.test(byId.D8.detail), "D8 covers PiVerify + duplicate detection");
+ok(byId.D9 && /Code of Conduct/.test(byId.D9.claim), "D9 covers the Code of Conduct");
+ok(byId.E3 && byId.E3.bucket === "external" && /silently/.test(byId.E3.claim), "E3 flags the 'silently marked' claim as external");
+ok(byId.D6 && /NOT public/.test(byId.D6.status), "D6 explicitly says thresholds are not public");
 
 // --- report ----------------------------------------------------------------
 console.log(`pi-user-behavior offline tests`);
