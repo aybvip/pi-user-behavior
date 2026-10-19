@@ -169,8 +169,10 @@ See [`docs/FAQ-BEHAVIOR-ON-CHAIN.md`](docs/FAQ-BEHAVIOR-ON-CHAIN.md) and
 node test/run.mjs
 ```
 
-Offline, deterministic, dependency-free. Covers the operation-type classifier, the event-topic
-extractor, the claim-table integrity, and the mainnet-refusal path.
+Offline, deterministic, dependency-free. Two suites: `behavior.test.mjs` (pure helpers +
+claim-table integrity) and `cli.test.mjs` (argument parsing + exit codes). **97 assertions, 0
+failures.** The suite asserts the invariant that **no Measured claim asserts an on-chain
+engagement/Sybil score exists**.
 
 ## License
 

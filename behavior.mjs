@@ -225,7 +225,9 @@ async function main() {
   process.exitCode = 2;
 }
 
-main().catch((e) => {
-  line(`error: ${e.message}`);
-  process.exitCode = 1;
-});
+main()
+  .then(() => { if (process.exitCode === undefined) process.exitCode = 0; })
+  .catch((e) => {
+    line(`error: ${e.message}`);
+    process.exitCode = 1;
+  });
